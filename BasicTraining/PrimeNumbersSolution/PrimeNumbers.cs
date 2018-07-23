@@ -35,9 +35,14 @@ namespace PrimeNumbersSolution
 
         public static IEnumerable<int> GetNPrimes(int numberOfPrimesToGet)
         {
+            if (numberOfPrimesToGet < 0)
+            {
+                throw new ArgumentException(nameof(numberOfPrimesToGet), "Cannot be less than 0");
+            }
+
             List<int> primes = new List<int>();
 
-            int currentNumber = 0;
+            int currentNumber = 1;
             while (primes.Count < numberOfPrimesToGet)
             {
                 if (IsAPrimeNumber(++currentNumber, primes))
@@ -53,7 +58,7 @@ namespace PrimeNumbersSolution
         {
             List<int> primes = new List<int>();
 
-            for (int currentNumber = 2; currentNumber < upTo; ++currentNumber)
+            for (int currentNumber = 2; currentNumber <= upTo; ++currentNumber)
             {
                 if (IsAPrimeNumber(currentNumber, primes))
                 {
