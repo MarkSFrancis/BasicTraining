@@ -7,9 +7,9 @@ namespace TimesTablesSolution
     {
         public static IEnumerable<int> GetTimesTableFor(int baseNumber, int timesTablesUpTo)
         {
-            if (baseNumber < 0)
+            if (timesTablesUpTo < 0)
             {
-                throw new ArgumentException();
+                throw new ArgumentOutOfRangeException();
             }
 
             for (int times = 1; times <= timesTablesUpTo; ++times)
