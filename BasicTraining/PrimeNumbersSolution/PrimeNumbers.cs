@@ -71,6 +71,15 @@ namespace PrimeNumbersSolution
 
         public static bool IsAPrimeNumber(int isThisAPrime)
         {
+            if (isThisAPrime <= 1)
+            {
+                if (isThisAPrime < 0)
+                {
+                    throw new NotSupportedException();
+                }
+                return false;
+            }
+
             for (int curVal = 2; curVal <= isThisAPrime / 2; ++curVal)
             {
                 if (isThisAPrime % curVal == 0)
