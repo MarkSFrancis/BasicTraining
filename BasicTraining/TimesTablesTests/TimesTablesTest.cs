@@ -21,9 +21,9 @@ namespace TimesTablesTests
         }
 
         [Test]
-        public void TimesTable_ContainingNegativeUpTo_ThrowsArgumentOutOfRangeException()
+        public void TimesTable_ContainingNegativeBase_ThrowsArgumentOutOfRangeException()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => TimesTables.GetTimesTableFor(1, -1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => TimesTables.GetTimesTableFor(-1, 1));
         }
 
         [Test]
@@ -35,27 +35,27 @@ namespace TimesTablesTests
         }
 
         [Test]
-        public void TimesTable_For1UpToMinus1_GetsTimesTable()
+        public void TimesTable_ForMinus1UpTo1_GetsTimesTable()
         {
             Assert.AreEqual(
                 new List<int> { -1 },
-                TimesTables.GetTimesTableFor(1, -1));
+                TimesTables.GetTimesTableFor(-1, 1));
         }
 
         [Test]
         public void TimesTable_For5UpTo12_GetsTimesTable()
         {
             Assert.AreEqual(
-                new List<int> { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60 }, 
+                new List<int> { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60 },
                 TimesTables.GetTimesTableFor(5, 12));
         }
 
         [Test]
-        public void TimesTable_For5UpToMinus12_GetsTimesTable()
+        public void TimesTable_ForMinus5UpTo12_GetsTimesTable()
         {
             Assert.AreEqual(
                 new List<int> { -5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60 },
-                TimesTables.GetTimesTableFor(5, -12));
+                TimesTables.GetTimesTableFor(-5, 12));
         }
     }
 }
