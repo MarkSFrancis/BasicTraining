@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SmallestBiggestSolution
 {
@@ -6,12 +7,22 @@ namespace SmallestBiggestSolution
     {
         public static int GetSmallest(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            return numbers.Min();
         }
 
         public static int GetBiggest(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            return numbers.Max();
         }
     }
 }
