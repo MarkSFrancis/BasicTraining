@@ -34,9 +34,9 @@ namespace SimpleCalculatorTests
         }
 
         [Test]
-        public void DoSum_WithTextSum_ThrowsInvalidCastException()
+        public void DoSum_WithTextSum_ThrowsArgumentException()
         {
-            Assert.Throws<InvalidCastException>(() => SimpleCalculator.Calculate("a"));
+            Assert.Throws<ArgumentException>(() => SimpleCalculator.Calculate("a"));
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace SimpleCalculatorTests
         }
 
         [Test]
-        public void DoSum_WithOperatorAndOneSideAsNumberAndOneSideAsText_ThrowsArgumentException()
+        public void DoSum_WithOperatorAndOneSideAsNumberAndOneSideAsText_ThrowsInvalidCastException()
         {
             Assert.Throws<InvalidCastException>(() => SimpleCalculator.Calculate("5 / a"));
         }
