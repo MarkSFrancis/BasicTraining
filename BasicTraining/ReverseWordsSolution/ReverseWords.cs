@@ -6,7 +6,21 @@ namespace ReverseWordsSolution
     {
         public static string Reverse(string sentence)
         {
-            throw new NotImplementedException();
+            if (sentence == null)
+            {
+                throw new ArgumentNullException(nameof(sentence));
+            }
+
+            string[] words = sentence.Split(' ');
+
+            for (int wordIndex = 0; wordIndex < words.Length; ++wordIndex)
+            {
+                var chars = words[wordIndex].ToCharArray();
+                Array.Reverse(chars);
+                words[wordIndex] = new string(chars);
+            }
+
+            return string.Join(" ", words);
         }
     }
 }
