@@ -18,7 +18,7 @@ namespace PrimeNumbersTests
         [Test]
         public void GetNPrimes_NegativeNumberOfPrimes_ThrowsArgumentException()
         {
-            Assert.Throws<NotSupportedException>(() => PrimeNumbers.GetNPrimes(-1));
+            Assert.Throws<ArgumentException>(() => PrimeNumbers.GetNPrimes(-1));
         }
 
         [Test]
