@@ -7,7 +7,15 @@ namespace TimesTablesSolution
     {
         public static IEnumerable<int> GetTimesTableFor(int baseNumber, int timesTablesUpTo)
         {
-            throw new NotImplementedException();
+            if (baseNumber < 0)
+            {
+                throw new ArgumentException();
+            }
+
+            for (int times = 1; times <= timesTablesUpTo; ++times)
+            {
+                yield return baseNumber * times;
+            }
         }
     }
 }
