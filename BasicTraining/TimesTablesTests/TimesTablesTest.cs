@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TimesTablesSolution;
 
 namespace TimesTablesTests
@@ -23,7 +24,7 @@ namespace TimesTablesTests
         [Test]
         public void TimesTable_ContainingNegativeUpTo_ThrowsArgumentOutOfRangeException()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => TimesTables.GetTimesTableFor(1, -1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => TimesTables.GetTimesTableFor(1, -1).ToList());
         }
 
         [Test]
