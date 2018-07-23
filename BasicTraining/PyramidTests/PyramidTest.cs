@@ -33,18 +33,21 @@ namespace PyramidTests
         public void BuildPyramid_With10Rows_ReturnsPyramid()
         {
             var result = Pyramid.Build(10);
+            var expected = string.Join(Environment.NewLine,
+                new[] {
+"         □         ",
+"        □□□        ",
+"       □□□□□       ",
+"      □□□□□□□      ",
+"     □□□□□□□□□     ",
+"    □□□□□□□□□□□    ",
+"   □□□□□□□□□□□□□   ",
+"  □□□□□□□□□□□□□□□  ",
+" □□□□□□□□□□□□□□□□□ ",
+"□□□□□□□□□□□□□□□□□□□"
+                });
 
-            Assert.AreEqual(
-@"         □         
-        □□□        
-       □□□□□       
-      □□□□□□□      
-     □□□□□□□□□     
-    □□□□□□□□□□□    
-   □□□□□□□□□□□□□   
-  □□□□□□□□□□□□□□□  
- □□□□□□□□□□□□□□□□□ 
-□□□□□□□□□□□□□□□□□□□".Replace("\n", Environment.NewLine), result);
+            Assert.AreEqual(expected, result);
         }
     }
 }
