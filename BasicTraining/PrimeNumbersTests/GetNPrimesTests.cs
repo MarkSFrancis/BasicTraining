@@ -18,7 +18,7 @@ namespace PrimeNumbersTests
         [Test]
         public void GetNPrimes_NegativeNumberOfPrimes_ThrowsArgumentException()
         {
-            Assert.Throws<NotSupportedException>(() => PrimeNumbers.GetNPrimes(-1));
+            Assert.Throws<ArgumentException>(() => PrimeNumbers.GetNPrimes(-1));
         }
 
         [Test]
@@ -53,7 +53,7 @@ namespace PrimeNumbersTests
             var results = PrimeNumbers.GetNPrimes(16);
 
             Assert.AreEqual(
-                new List<int> { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 49 }, results);
+                new List<int> { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53 }, results);
         }
     }
 }

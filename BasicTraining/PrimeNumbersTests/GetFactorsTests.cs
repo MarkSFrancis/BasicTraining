@@ -50,7 +50,7 @@ namespace PrimeNumbersTests
         [Test]
         public void GetFactors_For84_GetsFactors()
         {
-            var results = PrimeNumbers.GetFactors(1);
+            var results = PrimeNumbers.GetFactors(84);
 
             Assert.AreEqual(
                 new List<int> { 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84 }, results);
