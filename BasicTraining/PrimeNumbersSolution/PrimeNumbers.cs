@@ -17,9 +17,7 @@ namespace PrimeNumbersSolution
                 yield break;
             }
 
-            yield return 1;
-
-            for (int curVal = 2; curVal <= factorsOf / 2; ++curVal)
+            for (int curVal = 1; curVal <= factorsOf / 2; ++curVal)
             {
                 if (factorsOf % curVal == 0)
                 {
